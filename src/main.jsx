@@ -31,6 +31,7 @@ function LeafMark() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeYear, setActiveYear] = useState("2018");
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
@@ -195,19 +196,221 @@ function App() {
           </div>
         </section>
 
-        <section className="quote-section" id="galeria">
-          <div className="quote-leaves left"></div>
-          <div className="quote-inner">
-            <p className="quote-mark">“</p>
-            <blockquote>
-              Uma história de luta, representação e compromisso
-              com os povos indígenas.
-            </blockquote>
-            <p className="quote-caption">JOENIA WAPICHANA • UMA TRAJETÓRIA QUE FLORESCE</p>
-            <button className="yellow-button" onClick={() => scrollTo("inicio")}>EXPLORAR O SITE <span>→</span></button>
-          </div>
-          <div className="quote-leaves right"></div>
-        </section>
+     <section className="gallery-section" id="galeria">
+  <div className="gallery-inner">
+
+    <div className="gallery-heading">
+      <p className="eyebrow">REGISTROS DE UMA TRAJETÓRIA</p>
+      <h2>Uma trajetória que <em>floresce</em></h2>
+      <p>
+        Imagens que registram momentos da caminhada de Joenia Wapichana,
+        desde a defesa dos territórios indígenas até sua atuação nos espaços
+        de representação e decisão.
+      </p>
+    </div>
+
+    <div className="gallery-grid">
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(0)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-1.png" alt="Joenia Wapichana durante a defesa da Terra Indígena Raposa Serra do Sol" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2008 • RAPOSA SERRA DO SOL</span>
+          <h3>Defesa do território</h3>
+          <p>
+            Joenia Wapichana, em 2008, durante sua defesa no julgamento
+            da demarcação da Terra Indígena Raposa Serra do Sol, em Roraima.
+          </p>
+          <small>Fonte: LinkedIn</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(1)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-2.png" alt="Joenia Wapichana durante o julgamento da Terra Indígena Raposa Serra do Sol" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2008 • RAPOSA SERRA DO SOL</span>
+          <h3>Direito e resistência</h3>
+          <p>
+            Durante o julgamento da demarcação da Terra Indígena
+            Raposa Serra do Sol, Joenia atuou na defesa dos direitos indígenas.
+          </p>
+          <small>Fonte: Correio Braziliense</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(2)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-3.png" alt="Joenia Wapichana no Acampamento Terra Livre" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2019 • ACAMPAMENTO TERRA LIVRE</span>
+          <h3>Força coletiva</h3>
+          <p>
+            A deputada federal Joenia Wapichana encontra companheiras
+            indígenas durante o Acampamento Terra Livre, em Brasília.
+          </p>
+          <small>Foto: Katie Maehler/APIB</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(3)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-4.png" alt="Joenia Wapichana recebida por indígenas do povo Wapichana" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2018 • POVO WAPICHANA</span>
+          <h3>Entre seu povo</h3>
+          <p>
+            Indígenas recebem Joenia Wapichana em uma comunidade próxima
+            ao município de Amajari, em Roraima.
+          </p>
+          <small>Foto: Mayra Wapichana</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(4)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-5.png" alt="Joenia Wapichana recebendo prêmio das Nações Unidas" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2018 • PRÊMIO DA ONU</span>
+          <h3>Reconhecimento internacional</h3>
+          <p>
+            Joenia Wapichana recebe o Prêmio das Nações Unidas no Campo
+            dos Direitos Humanos de 2018, em reconhecimento à sua atuação.
+          </p>
+          <small>Foto: ONU</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(5)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-6.png" alt="Joenia Wapichana em sua posse no Congresso Nacional" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2019 • CONGRESSO NACIONAL</span>
+          <h3>Uma nova representação</h3>
+          <p>
+            No dia da posse, apoiadores, lideranças indígenas e amigos
+            caminharam junto com Joenia até o Congresso Nacional.
+          </p>
+          <small>Foto: Divulgação</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(6)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-7.png" alt="Joenia Wapichana em seu gabinete 231" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2019 • GABINETE 231</span>
+          <h3>Um espaço de representação</h3>
+          <p>
+            Joenia Wapichana escolheu para seu gabinete o número 231,
+            referência ao artigo da Constituição que trata dos direitos indígenas.
+          </p>
+          <small>Foto: Webert da Cruz/ONU Mulheres</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(7)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-8.png" alt="Joenia Wapichana em seu gabinete na Câmara dos Deputados" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2019–2022 • CONGRESSO</span>
+          <h3>Atuação parlamentar</h3>
+          <p>
+            Joenia Wapichana em seu gabinete na Câmara dos Deputados,
+            onde atuou na defesa dos direitos dos povos indígenas.
+          </p>
+          <small>Foto: Divulgação</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item" onClick={() => setSelectedPhoto(8)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-9.png" alt="Joenia Wapichana na presidência da Funai ao lado do cacique Raoni" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2023 • FUNAI</span>
+          <h3>Presidência da Funai</h3>
+          <p>
+            Posse de Joenia Wapichana como presidenta da Fundação Nacional
+            dos Povos Indígenas, ao lado do cacique Raoni.
+          </p>
+          <small>Foto: Joedson Alves/Agência Brasil</small>
+        </figcaption>
+      </figure>
+
+      <figure className="gallery-item gallery-featured" onClick={() => setSelectedPhoto(9)}>
+        <div className="gallery-image">
+          <img src="/assets/galeria/joenia-99.png" alt="Retrato de Joenia Wapichana" />
+        </div>
+        <figcaption>
+          <span className="gallery-year">2022 • RETRATO</span>
+          <h3>A força de uma trajetória</h3>
+          <p>
+            Antes dos espaços de poder, existe uma história. Joenia Wapichana
+            carrega em sua trajetória a força de seu povo, a identidade Wapichana
+            e a coragem de transformar resistência em representação.
+          </p>
+          <small>Foto: Lohana Chaves • Fonte: Repórter Brasil</small>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+
+  {selectedPhoto !== null && (
+    <div className="gallery-modal" onClick={() => setSelectedPhoto(null)}>
+      <button
+        className="gallery-close"
+        onClick={() => setSelectedPhoto(null)}
+        aria-label="Fechar galeria"
+      >
+        ×
+      </button>
+
+      <div className="gallery-modal-content" onClick={(e) => e.stopPropagation()}>
+        <img
+          src={[
+            "/assets/galeria/joenia-1.png",
+            "/assets/galeria/joenia-2.png",
+            "/assets/galeria/joenia-3.png",
+            "/assets/galeria/joenia-4.png",
+            "/assets/galeria/joenia-5.png",
+            "/assets/galeria/joenia-6.png",
+            "/assets/galeria/joenia-7.png",
+            "/assets/galeria/joenia-8.png",
+            "/assets/galeria/joenia-9.png",
+            "/assets/galeria/joenia-99.png"
+          ][selectedPhoto]}
+          alt="Fotografia de Joenia Wapichana"
+        />
+
+        <button
+          className="gallery-prev"
+          onClick={() => setSelectedPhoto((selectedPhoto + 9) % 10)}
+          aria-label="Fotografia anterior"
+        >
+          ←
+        </button>
+
+        <button
+          className="gallery-next"
+          onClick={() => setSelectedPhoto((selectedPhoto + 1) % 10)}
+          aria-label="Próxima fotografia"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  )}
+</section>
       </main>
 
       <footer className="footer">

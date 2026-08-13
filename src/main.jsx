@@ -93,7 +93,6 @@ function App() {
             </div>
             <div className="hero-flower flower-one">✿</div>
             <div className="hero-flower flower-two">✦</div>
-            <div className="bird" aria-hidden="true">⌁</div>
           </div>
 
           <img className="hero-border" src="/assets/botanical-border.svg" alt="" aria-hidden="true" />
